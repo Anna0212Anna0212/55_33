@@ -23,6 +23,7 @@ namespace _55_3
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "選擇文字檔或圖片檔";
             ofd.Filter= "Text Files (*.txt)|*.txt|Image Files (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp";
             if(ofd.ShowDialog() == DialogResult.OK)
             {
