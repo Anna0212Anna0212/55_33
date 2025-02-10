@@ -57,5 +57,16 @@ namespace _55_3
             pictureBox1.Visible = false;
             textBox1.Visible = false;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            pictureBox1.Size = new Size(trackBar1.Value * 4, trackBar1.Value * 3);
+            textBox1.Size = new Size(trackBar1.Value * 4, trackBar1.Value * 3);
+        }
     }
 }
