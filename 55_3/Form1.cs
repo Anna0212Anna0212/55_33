@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace _55_3
         {
             InitializeComponent();
         }
-
+        string filePath;
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -27,13 +28,14 @@ namespace _55_3
             ofd.Filter= "Text Files (*.txt)|*.txt|Image Files (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp";
             if(ofd.ShowDialog() == DialogResult.OK)
             {
-                string filePath = ofd.FileName;
+                filePath = ofd.FileName;
                 string extension = Path.GetExtension(filePath).ToLower();
                 if (extension == ".txt")
                 {
                     textBox1.Text = File.ReadAllText(filePath);
                     textBox1.Visible = true;
                     pictureBox1.Visible = false;
+                    button2.Visible = button3.Visible = true;
                 }
                 else if (extension == ".jpg" || extension == ".png" || extension == ".bmp")
                 {
@@ -54,6 +56,7 @@ namespace _55_3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            button2.Visible = button3.Visible = false;
             pictureBox1.Visible = false;
             textBox1.Visible = false;
         }
@@ -67,6 +70,16 @@ namespace _55_3
         {
             pictureBox1.Size = new Size(trackBar1.Value * 4, trackBar1.Value * 3);
             textBox1.Size = new Size(trackBar1.Value * 4, trackBar1.Value * 3);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            File.AppendAllText(filePath,textBox1.Text);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(filePath,textBox1.Text);
         }
     }
 }
