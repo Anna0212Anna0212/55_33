@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -42,9 +43,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(197, 12);
+            this.button1.Location = new System.Drawing.Point(197, 11);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(312, 42);
+            this.button1.Size = new System.Drawing.Size(312, 39);
             this.button1.TabIndex = 0;
             this.button1.Text = "開啟要顯式的檔案";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,18 +53,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 79);
+            this.textBox1.Location = new System.Drawing.Point(149, 73);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(360, 300);
+            this.textBox1.Size = new System.Drawing.Size(360, 277);
             this.textBox1.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(171, 102);
+            this.pictureBox1.Location = new System.Drawing.Point(149, 94);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(360, 300);
+            this.pictureBox1.Size = new System.Drawing.Size(360, 277);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -71,7 +72,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(571, 350);
+            this.trackBar1.Location = new System.Drawing.Point(571, 323);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 50;
             this.trackBar1.Name = "trackBar1";
@@ -84,7 +85,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(568, 318);
+            this.label1.Location = new System.Drawing.Point(568, 294);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 4;
@@ -93,9 +94,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(572, 79);
+            this.button2.Location = new System.Drawing.Point(572, 73);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 43);
+            this.button2.Size = new System.Drawing.Size(110, 40);
             this.button2.TabIndex = 5;
             this.button2.Text = "追加文字";
             this.button2.UseVisualStyleBackColor = true;
@@ -104,19 +105,29 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(572, 149);
+            this.button3.Location = new System.Drawing.Point(572, 138);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 43);
+            this.button3.Size = new System.Drawing.Size(110, 40);
             this.button3.TabIndex = 6;
             this.button3.Text = "覆蓋檔案";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(675, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 12);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "label2";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 436);
+            this.ClientSize = new System.Drawing.Size(761, 402);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -143,6 +154,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label2;
     }
 }
 

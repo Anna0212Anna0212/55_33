@@ -42,6 +42,7 @@ namespace _55_3
                     pictureBox1.Image = Image.FromFile(filePath);
                     pictureBox1.Visible = true;
                     textBox1.Visible = false;
+                    button2.Visible = button3.Visible = false;
                 }
                 else
                 {
@@ -70,6 +71,7 @@ namespace _55_3
         {
             pictureBox1.Size = new Size(trackBar1.Value * 4, trackBar1.Value * 3);
             textBox1.Size = new Size(trackBar1.Value * 4, trackBar1.Value * 3);
+            label2.Text = $"({trackBar1.Value * 4},{trackBar1.Value * 3})";
         }
 
         private void button2_Click(object sender, EventArgs e)
