@@ -118,9 +118,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(675, 302);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 12);
+            this.label2.Size = new System.Drawing.Size(52, 12);
             this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.label2.Text = "(360,300)";
             // 
             // Form1
             // 
