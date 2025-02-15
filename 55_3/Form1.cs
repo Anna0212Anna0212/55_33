@@ -57,7 +57,7 @@ namespace _55_3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button4.Visible = button2.Visible = button3.Visible = false;
+            button2.Visible = button3.Visible = false;
             pictureBox1.Visible = false;
             textBox1.Visible = false;
         }
