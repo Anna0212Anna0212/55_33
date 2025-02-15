@@ -101,7 +101,7 @@ namespace _55_3
                 {
                     if(filePath!= filePath2)
                     {
-                        File.Copy(filePath, filePath2);
+                        pictureBox1.Image.Save(filePath2);
                     }
                 }
                 else
