@@ -33,14 +33,14 @@ namespace _55_3
                 if (extension == ".txt")
                 {
                     textBox1.Text = File.ReadAllText(filePath);
-                    textBox1.Visible = true;
+                    button4.Visible = textBox1.Visible = true;
                     pictureBox1.Visible = false;
                     button2.Visible = button3.Visible = true;
                 }
                 else if (extension == ".jpg" || extension == ".png" || extension == ".bmp")
                 {
                     pictureBox1.Image = Image.FromFile(filePath);
-                    pictureBox1.Visible = true;
+                    button4.Visible = pictureBox1.Visible = true;
                     textBox1.Visible = false;
                     button2.Visible = button3.Visible = false;
                 }
@@ -57,7 +57,7 @@ namespace _55_3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button2.Visible = button3.Visible = false;
+            button4.Visible = button2.Visible = button3.Visible = false;
             pictureBox1.Visible = false;
             textBox1.Visible = false;
         }
@@ -82,6 +82,37 @@ namespace _55_3
         private void button3_Click(object sender, EventArgs e)
         {
             File.WriteAllText(filePath,textBox1.Text);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "選擇文字檔或圖片檔";
+            ofd.Filter = textBox1.Visible?"Text Files (*.txt)|*.txt": "Image Files (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string filePath2 = ofd.FileName;
+                string extension = Path.GetExtension(filePath).ToLower();
+                if (extension == ".txt"&&textBox1.Visible)
+                {
+                    File.WriteAllText(filePath2, File.ReadAllText(filePath));
+                }
+                else if (extension == ".jpg" || extension == ".png" || extension == ".bmp" && pictureBox1.Visible)
+                {
+                    if(filePath!= filePath2)
+                    {
+                        File.Copy(filePath, filePath2);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("不支援的檔案格式", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("上傳失敗", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
