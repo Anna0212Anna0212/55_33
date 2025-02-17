@@ -45,7 +45,7 @@ namespace _55_3
                     button4.Visible = pictureBox1.Visible = true;
                     textBox1.Visible = false;
                     button2.Visible = button3.Visible = false;
-                    label3.Text = $"檔案名稱：{fi.Name}.{fi.Attributes}\n字元：{fi.Length} bytes\n檔案的建立時間：{fi.CreationTime}\n檔案的上次修改日期：{fi.LastAccessTime}";
+                    label3.Text = $"檔案名稱：{fi.Name}\n字元：{fi.Length} bytes\n檔案的建立時間：{fi.CreationTime}\n檔案的上次修改日期：{fi.LastAccessTime}";
                 }
                 else
                 {
