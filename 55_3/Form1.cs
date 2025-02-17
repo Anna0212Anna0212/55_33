@@ -30,12 +30,14 @@ namespace _55_3
             {
                 filePath = ofd.FileName;
                 string extension = Path.GetExtension(filePath).ToLower();
+                FileInfo fi = new FileInfo(filePath);
                 if (extension == ".txt")
                 {
                     textBox1.Text = File.ReadAllText(filePath);
                     button4.Visible = textBox1.Visible = true;
                     pictureBox1.Visible = false;
                     button2.Visible = button3.Visible = true;
+                    label3.Text = $"檔案名稱：{fi.Name}\n字元：{fi.Length} bytes\n檔案的建立時間：{fi.CreationTime}\n檔案的上次修改日期：{fi.LastAccessTime}";
                 }
                 else if (extension == ".jpg" || extension == ".png" || extension == ".bmp")
                 {
@@ -43,6 +45,7 @@ namespace _55_3
                     button4.Visible = pictureBox1.Visible = true;
                     textBox1.Visible = false;
                     button2.Visible = button3.Visible = false;
+                    label3.Text = $"檔案名稱：{fi.Name}.{fi.Attributes}\n字元：{fi.Length} bytes\n檔案的建立時間：{fi.CreationTime}\n檔案的上次修改日期：{fi.LastAccessTime}";
                 }
                 else
                 {
@@ -57,7 +60,7 @@ namespace _55_3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button2.Visible = button3.Visible = false;
+            button4.Visible = button2.Visible = button3.Visible = false;
             pictureBox1.Visible = false;
             textBox1.Visible = false;
         }
