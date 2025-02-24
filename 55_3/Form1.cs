@@ -67,14 +67,14 @@ namespace _55_3
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            //150-350
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            pictureBox1.Size = new Size(trackBar1.Value * 4, trackBar1.Value * 3);
-            textBox1.Size = new Size(trackBar1.Value * 4, trackBar1.Value * 3);
-            label2.Text = $"({trackBar1.Value * 4},{trackBar1.Value * 3})";
+            pictureBox1.Size = new Size(trackBar1.Value * 10, trackBar1.Value * 10);
+            textBox1.Size = new Size(trackBar1.Value * 10, trackBar1.Value * 10);
+            label2.Text = $"({trackBar1.Value * 10},{trackBar1.Value * 10})";
         }
 
         private void button2_Click(object sender, EventArgs e)
