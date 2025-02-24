@@ -36,7 +36,6 @@ namespace _55_3
                     textBox1.Text = File.ReadAllText(filePath);
                     button4.Visible = textBox1.Visible = true;
                     pictureBox1.Visible = false;
-                    button2.Visible = button3.Visible = true;
                     label3.Text = $"檔案名稱：{fi.Name}\n字元：{fi.Length} bytes\n檔案的建立時間：{fi.CreationTime}\n檔案的上次修改日期：{fi.LastAccessTime}";
                 }
                 else if (extension == ".jpg" || extension == ".png" || extension == ".bmp")
@@ -44,7 +43,6 @@ namespace _55_3
                     pictureBox1.Image = Image.FromFile(filePath);
                     button4.Visible = pictureBox1.Visible = true;
                     textBox1.Visible = false;
-                    button2.Visible = button3.Visible = false;
                     label3.Text = $"檔案名稱：{fi.Name}\n字元：{fi.Length} bytes\n檔案的建立時間：{fi.CreationTime}\n檔案的上次修改日期：{fi.LastAccessTime}";
                 }
                 else
@@ -60,7 +58,6 @@ namespace _55_3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button4.Visible = button2.Visible = button3.Visible = false;
             pictureBox1.Visible = false;
             textBox1.Visible = false;
         }
@@ -96,16 +93,27 @@ namespace _55_3
             {
                 string filePath2 = ofd.FileName;
                 string extension = Path.GetExtension(filePath).ToLower();
-                if (extension == ".txt"&&textBox1.Visible)
+                if (extension == ".txt" && textBox1.Visible)
                 {
-                    File.WriteAllText(filePath2, File.ReadAllText(filePath));
+                    if (radioButton1.Checked)
+                    {
+                        File.WriteAllText(filePath, File.ReadAllText(filePath2));
+                    }
+                    else
+                    {
+                        File.AppendAllText(filePath, File.ReadAllText(filePath2));
+                    }
                 }
                 else if (extension == ".jpg" || extension == ".png" || extension == ".bmp" && pictureBox1.Visible)
                 {
-                    if(filePath!= filePath2)
+                    try
                     {
-                        File.WriteAllBytes(filePath2, File.ReadAllBytes(filePath));
+                        if (filePath != filePath2)
+                        {
+                            File.WriteAllBytes(filePath2, File.ReadAllBytes(filePath));
+                        }
                     }
+                    catch { MessageBox.Show("檔案讀取錯誤", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
                 else
                 {
