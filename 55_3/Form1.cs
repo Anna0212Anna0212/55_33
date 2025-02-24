@@ -33,13 +33,17 @@ namespace _55_3
                 FileInfo fi = new FileInfo(filePath);
                 if (extension == ".txt")
                 {
+                    panel1.Visible = radioButton1.Visible = radioButton2.Visible = true;
                     textBox1.Text = File.ReadAllText(filePath);
                     button4.Visible = textBox1.Visible = true;
+                    label2.Visible = label1.Visible = trackBar1.Visible = true;
                     pictureBox1.Visible = false;
                     label3.Text = $"檔案名稱：{fi.Name}\n字元：{fi.Length} bytes\n檔案的建立時間：{fi.CreationTime}\n檔案的上次修改日期：{fi.LastAccessTime}";
                 }
                 else if (extension == ".jpg" || extension == ".png" || extension == ".bmp")
                 {
+                    panel1.Visible = radioButton1.Visible = radioButton2.Visible = false;
+                    label1.Visible = trackBar1.Visible = true;
                     pictureBox1.Image = Image.FromFile(filePath);
                     button4.Visible = pictureBox1.Visible = true;
                     textBox1.Visible = false;
@@ -58,6 +62,7 @@ namespace _55_3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            label2.Visible = panel1.Visible=radioButton1.Visible = radioButton2.Visible = label1.Visible = trackBar1.Visible = button4.Visible = false;
             pictureBox1.Visible = false;
             textBox1.Visible = false;
         }
